@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <style></style>
+    <script>
+      function getData() {
+        const search = document.getElementById("search").value;
+        fetch(
+          `https://api.giphy.com/v1/gifs/search?api_key=HuRqTax8hOGfIBNE9aDNdSG0OCduyMOo&q=${search}&limit=25&offset=0&rating=g&lang=en`
+        )
+          .then((response) => response.json())
+          .then((data) => {
+            const app = document.getElementById("app");
+            const results = data.data;
+            console.log(results);
+            results.map((o) => {
+              const result = document.createElement("div");
+              result.innerHTML = `
+            <h2>${o.title} ${o.id}</h2>
+            <iframe src="${o.embed_url}" width="480" height="429" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+            <p>
+              <a href="${o.url}">via GIPHY</a>
+            </p>
+            `;
+              app.appendChild(result);
+            });
+          });
+      }
+    </script>
+  </head>
+
+  <body>
+    <input type="text" id="search" />
+    <input type="button" onclick="getData()" value="search" />
+    <div id="app"></div>
+  </body>
+</html>
