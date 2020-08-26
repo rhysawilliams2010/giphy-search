@@ -19,12 +19,12 @@
               const result = document.createElement("div");
               result.innerHTML = `
             <h2>${o.title} ${o.id}</h2>
-            <iframe src="${o.embed_url}" width="480" height="429" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+            <iframe src="${o.embed_url}" width="" height="429" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
             <p>
               <a href="${o.url}">via GIPHY</a>
             </p>
             `;
-              app.appendChild(result);
+              app.prepend(result);
             });
           });
       }
