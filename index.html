@@ -4,13 +4,15 @@
     <title>Parcel Sandbox</title>
     <meta charset="UTF-8" />
     <style>
-    body {
-      background-color: red;
-    }
-    h1 {
-      color: fuchsia
-    }
-    input{background-color: limegreen}
+      body {
+        background-color: red;
+      }
+      h1 {
+        color: fuchsia;
+      }
+      input {
+        background-color: limegreen;
+      }
     </style>
     <script>
       function getData() {
@@ -36,13 +38,24 @@
             });
           });
       }
+      document.addEventListener("keyup", function (event) {
+        event.preventDefault();
+        if (event.keyCode === 13) {
+          document.getElementById("search-button").click();
+        }
+      });
     </script>
   </head>
 
   <body>
     <h1>full memes ahead!</h1>
     <input type="text" id="search" />
-    <input type="button" onclick="getData()" value="search" />
+    <input
+      type="button"
+      id="search-button"
+      onclick="getData()"
+      value="search"
+    />
     <div id="app"></div>
   </body>
 </html>
