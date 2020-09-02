@@ -27,7 +27,7 @@
               const result = document.createElement("div");
               result.innerHTML = `
             <h2>${o.title} ${o.id}</h2>
-            <iframe src="${o.embed_url}" width="480" height="429" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+            <iframe src="${o.embed_url}" width="100px" height="100px" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
             <p>
               <a href="${o.url}">via GIPHY</a>
             </p>
@@ -44,8 +44,5 @@
     <input type="text" id="search" />
     <input type="button" onclick="getData()" value="search" />
     <div id="app"></div>
-  </body>
-</html>
-
   </body>
 </html>
